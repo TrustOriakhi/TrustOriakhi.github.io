@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trust Oriakhi: work samples</title>
+<meta name="description" content="What Trust has built: Enamel AI, Jobfinder+ and data work.">
+<style>
+  :root { --ink:#16171a; --muted:#5d6068; --line:#e6e2da; --paper:#faf8f4; --card:#ffffff; --accent:#0e7a5a; --accent-soft:#e3f2ec; }
+  @media (prefers-color-scheme: dark) { :root { --ink:#ecebe6; --muted:#a2a19b; --line:#2b2c31; --paper:#121316; --card:#1a1b1f; --accent:#41d39b; --accent-soft:#163128; } }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--paper); color:var(--ink); font:16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 48px 20px 80px; }
+  h1 { font-size: clamp(30px, 6vw, 42px); line-height:1.1; margin: 0 0 8px; letter-spacing:-0.02em; }
+  h2 { font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin: 44px 0 14px; }
+  h3 { margin: 0 0 6px; font-size: 19px; }
+  p { margin: 0 0 12px; }
+  a { color: var(--accent); }
+  .lede { font-size: 19px; color: var(--muted); }
+  .for { display:none; background: var(--accent-soft); border-radius: 14px; padding: 18px 20px; margin: 26px 0 0; }
+  .for b { display:block; font-size: 13px; letter-spacing:.08em; text-transform:uppercase; color: var(--accent); margin-bottom:6px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 22px; margin-bottom: 16px; }
+  .meta { color: var(--muted); font-size: 14px; margin-bottom: 12px; }
+  ul { margin: 0; padding-left: 20px; } li { margin-bottom: 6px; }
+  .chips { display:flex; flex-wrap:wrap; gap:6px; margin-top: 14px; }
+  .chips span { font-size: 13px; border:1px solid var(--line); border-radius: 999px; padding: 3px 10px; color: var(--muted); }
+  .video { position:relative; padding-top:56.25%; border-radius:14px; overflow:hidden; border:1px solid var(--line); margin-top: 22px; }
+  .video iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
+  .contact { display:flex; flex-wrap:wrap; gap:10px; margin-top: 18px; }
+  .contact a { text-decoration:none; border:1px solid var(--line); background:var(--card); padding: 8px 14px; border-radius: 10px; font-weight:600; }
+  footer { margin-top: 48px; color: var(--muted); font-size: 14px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Trust Oriakhi</h1>
+  <p class="lede">I build AI products that do real work: voice agents, automation and the data plumbing underneath. Manchester-based.</p>
+  <div class="contact">
+    <a href="mailto:trustoriakhi16@gmail.com">Email</a>
+    <a href="https://www.linkedin.com/in/trust-oriakhi-608535184/">LinkedIn</a>
+    <a href="https://github.com/TrustOriakhi">GitHub</a>
+  </div>
+
+  <section class="for" id="for">
+    <b id="for-title"></b>
+    <p id="for-pitch" style="margin:0"></p>
+  </section>
+
+  
+
+  <h2>What I've built</h2>
+
+  <div class="card">
+    <h3>Enamel AI: an AI receptionist for dental practices</h3>
+    <div class="meta">Founder &amp; sole engineer · Sep 2026 – now · pre-launch, live demo line</div>
+    <ul>
+      <li>Voice receptionist ("Sarah", on Vapi) that books, reschedules and takes messages against the live clinic diary, with booking safety enforced on the server: read-back before booking, practitioner checks, new-patient handling.</li>
+      <li>Patient-call simulation harness to test the agent: raised the pass rate from 33 to 41 of 42 scenarios.</li>
+      <li>Booking integrity so double-bookings can't happen: database write locks, idempotent retries, held slots when a calendar sync is uncertain, Europe/London time handling across BST changes.</li>
+      <li>Multi-tenant access (organisation → practices → staff roles), hashed sessions, Postgres-backed rate limiting, GDPR retention defaults.</li>
+      <li>"Ask Enamel": an LLM assistant whose agent mode runs up to 8 tasks in parallel and asks for confirmation before anything outward-facing.</li>
+      <li>80+ merged pull requests and about 47 API integration test suites in CI; deployed on Oracle Cloud with automated backups, restore testing and uptime alerts.</li>
+    </ul>
+    <div class="chips"><span>TypeScript</span><span>Node.js / Express</span><span>Prisma</span><span>PostgreSQL (48 tables)</span><span>Next.js / React</span><span>Docker</span><span>Vapi</span><span>Stripe Connect</span></div>
+  </div>
+
+  <div class="card">
+    <h3>Jobfinder+: an open-source job-search pipeline</h3>
+    <div class="meta">Personal project · 2026 · <a href="https://github.com/TrustOriakhi/jobfinder-plus">github.com/TrustOriakhi/jobfinder-plus</a></div>
+    <ul>
+      <li>Finds roles from job boards and ATS APIs, scores fit with an LLM, and writes tailored CVs that are fact-checked against a verified profile before anything is sent.</li>
+      <li>Chrome extension that reads application forms on the fly (multi-step forms, custom dropdowns, repeated work-history cards) and fills them, stopping before Submit.</li>
+      <li>Reads email replies to track confirmations, rejections and interview invites; drafts follow-ups and interview prep.</li>
+    </ul>
+    <div class="chips"><span>TypeScript</span><span>Playwright</span><span>SQLite</span><span>Claude &amp; Gemini APIs</span><span>Chrome MV3</span></div>
+  </div>
+
+  <div class="card">
+    <h3>Call-data analysis for an IT department</h3>
+    <div class="meta">University of Manchester · 2025</div>
+    <ul>
+      <li>Analysed switchboard call data for the IT department with SQL and Python (pandas), using NLP to group free-text call reasons into categories. The IT managers used the findings.</li>
+      <li>Day to day I keep the switchboard's staff directory accurate (starters and leavers), administer employee contact data, test lines and train new starters.</li>
+    </ul>
+    <div class="chips"><span>SQL</span><span>Python</span><span>pandas</span><span>NLP</span></div>
+  </div>
+
+  <div class="card">
+    <h3>DJ audio tool</h3>
+    <div class="meta">Desktop app · 2026 · used by me and other DJs, sold to 5</div>
+    <ul>
+      <li>FastAPI backend with concurrent downloads and conversion, metadata tagging, Rekordbox export and stem separation; BPM analysis with librosa plus a statistical correction for bad tempo estimates; packaged with Electron.</li>
+    </ul>
+  </div>
+
+  <footer>Trust · <a href="mailto:trustoriakhi16@gmail.com">trustoriakhi16@gmail.com</a></footer>
+</main>
+<script>
+  // The link in each application ends with #<data>: who it's for and why.
+  (function () {
+    var q = new URLSearchParams(location.search).get("for");
+    var d = null;
+    try { if (location.hash.length > 1) d = JSON.parse(new TextDecoder().decode(Uint8Array.from(atob(location.hash.slice(1).replace(/-/g, "+").replace(/_/g, "/")), function (c) { return c.charCodeAt(0); }))); } catch (e) {}
+    var company = (d && d.c) || q;
+    if (!company) return;
+    document.getElementById("for-title").textContent = d && d.r ? "For the " + d.r + " role at " + company : "Hello " + company;
+    document.getElementById("for-pitch").textContent = (d && d.w) || "Thanks for taking a look. Below is what I've built and how I work.";
+    document.getElementById("for").style.display = "block";
+    document.title = "Trust for " + company;
+  })();
+</script>
+</body>
+</html>
